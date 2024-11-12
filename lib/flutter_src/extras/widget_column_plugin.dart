@@ -54,7 +54,8 @@ class WidgetColumnPluginManager extends WidgetPluginManager<Widget, AttachableWi
         crossAxisAlignment: crossAxisAlignment,
         mainAxisAlignment: mainAxisAlignment,
         mainAxisSize: mainAxisSize,
-        spacing: spacing,
+        // TODO: Not yet supported by Flutter stable.
+        //spacing: spacing,
         textDirection: textDirection,
         verticalDirection: verticalDirection,
         children: children,

@@ -54,7 +54,8 @@ class WidgetRowPluginManager extends WidgetPluginManager<Widget, AttachableWidge
         crossAxisAlignment: crossAxisAlignment,
         mainAxisAlignment: mainAxisAlignment,
         mainAxisSize: mainAxisSize,
-        spacing: spacing,
+        // TODO: Not yet supported by Flutter stable.
+        //spacing: spacing,
         textDirection: textDirection,
         verticalDirection: verticalDirection,
         children: children,
