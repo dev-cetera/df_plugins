@@ -11,7 +11,7 @@ Dart & Flutter Packages by DevCetra.com & contributors.
 
 ## Summary
 
-Provides methods to create plugins for Dart and Flutter. This package demonstrates ways to make Dart usage in Flutter even more modular.
+Provides methods to create plugins for Dart and Flutter. This package demonstrates ways to make Dart and Flutter even more modular.
 
 ## Usage Example
 

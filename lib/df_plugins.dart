@@ -10,7 +10,7 @@
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
 
-/// Provides methods to create plugins for Dart and Flutter.
+/// Provides methods to create plugins for Dart and Flutter. This package demonstrates ways to make Dart and Flutter even more modular.
 library;
 
 export 'dart:async';
