@@ -1,0 +1,42 @@
+##.title
+## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+##
+## Dart/Flutter (DF) Packages by DevCetra.com & contributors. The use of this
+## source code is governed by an MIT-style license described in the LICENSE
+## file located in this project's root directory.
+##
+## See: https://opensource.org/license/mit
+##
+## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
+##.title~
+
+name: df_plugins
+description: Provides methods to create plugins for Dart and Flutter.
+version: 0.1.0
+repository: https://github.com/DevCetra/df_plugins
+funding:
+  - https://www.buymeacoffee.com/robmllze
+topics:
+  - your
+  - topics
+  - here
+
+## -----------------------------------------------------------------------------
+
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+## -----------------------------------------------------------------------------
+
+dependencies:
+  flutter:
+    sdk: flutter
+  df_type: ^0.7.2
+  meta: ^1.15.0
+
+## -----------------------------------------------------------------------------
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
