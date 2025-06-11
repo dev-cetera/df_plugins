@@ -1,7 +1,7 @@
 ##.title
 ## ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 ##
-## Dart/Flutter (DF) Packages by DevCetra.com & contributors. The use of this
+## Dart/Flutter (DF) Packages by dev-cetera.com & contributors. The use of this
 ## source code is governed by an MIT-style license described in the LICENSE
 ## file located in this project's root directory.
 ##
@@ -13,9 +13,9 @@
 name: df_plugins
 description: Provides methods to create plugins for Dart and Flutter. This package demonstrates ways to make Dart and Flutter even more modular.
 version: 0.1.1
-repository: https://github.com/DevCetra/df_plugins
+repository: https://github.com/dev-cetera/df_plugins
 funding:
-  - https://www.buymeacoffee.com/robmllze
+  - https://www.buymeacoffee.com/dev_cetera
 topics:
   - addon
   - modular
