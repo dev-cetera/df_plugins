@@ -16,7 +16,8 @@ import '/df_plugins.dart';
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-class WidgetRowPluginManager extends WidgetPluginManager<Widget, AttachableWidgetPlugin> {
+class WidgetRowPluginManager
+    extends WidgetPluginManager<Widget, AttachableWidgetPlugin> {
   final Key? key;
   final CrossAxisAlignment crossAxisAlignment;
   final double spacing;
@@ -37,14 +38,9 @@ class WidgetRowPluginManager extends WidgetPluginManager<Widget, AttachableWidge
   });
 
   @override
-  Widget Function({
-    required BuildContext context,
-    required Widget child,
-  }) get build {
-    return ({
-      required BuildContext context,
-      required Widget child,
-    }) {
+  Widget Function({required BuildContext context, required Widget child})
+  get build {
+    return ({required BuildContext context, required Widget child}) {
       final children = [child];
       for (final plugin in plugins) {
         children.add(plugin.attach(context, children.last));
@@ -64,7 +60,8 @@ class WidgetRowPluginManager extends WidgetPluginManager<Widget, AttachableWidge
   }
 }
 
-class WidgetRowPluginBuilder extends WidgetPluginBuilder<Widget, AttachableWidgetPlugin> {
+class WidgetRowPluginBuilder
+    extends WidgetPluginBuilder<Widget, AttachableWidgetPlugin> {
   final MainAxisAlignment mainAxisAlignment;
   final MainAxisSize mainAxisSize;
   final CrossAxisAlignment crossAxisAlignment;
@@ -92,9 +89,6 @@ class WidgetRowPluginBuilder extends WidgetPluginBuilder<Widget, AttachableWidge
       crossAxisAlignment: crossAxisAlignment,
       textDirection: textDirection,
       verticalDirection: verticalDirection,
-    ).build(
-      context: context,
-      child: child,
-    );
+    ).build(context: context, child: child);
   }
 }

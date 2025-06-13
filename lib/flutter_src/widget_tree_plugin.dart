@@ -23,15 +23,9 @@ class WidgetTreePluginManager<W extends Widget>
   /// Build a widget tree with all registered plugins, passing each previous
   /// child as input to the next plugin.
   @override
-  W Function({
-    required BuildContext context,
-    required W child,
-  }) get build {
+  W Function({required BuildContext context, required W child}) get build {
     // Apply plugins in order, each wrapping the previous result.
-    return ({
-      required BuildContext context,
-      required W child,
-    }) {
+    return ({required BuildContext context, required W child}) {
       return plugins.fold(child, (previousChild, plugin) {
         return plugin.attach(context, previousChild);
       });
@@ -51,6 +45,8 @@ class WidgetTreePluginBuilder<W extends Widget>
 
   @override
   Widget build(BuildContext context) {
-    return WidgetTreePluginManager<W>(plugins: plugins).build(context: context, child: child);
+    return WidgetTreePluginManager<W>(
+      plugins: plugins,
+    ).build(context: context, child: child);
   }
 }

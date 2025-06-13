@@ -156,10 +156,7 @@ class BackgroundColorPlugin extends AttachableWidgetPlugin {
 
   @override
   Widget attach(BuildContext context, Widget child) {
-    return Container(
-      color: color,
-      child: child,
-    );
+    return Container(color: color, child: child);
   }
 }
 
@@ -170,9 +167,6 @@ class PaddingPlugin extends AttachableWidgetPlugin {
 
   @override
   Widget attach(BuildContext context, Widget child) {
-    return Padding(
-      padding: padding,
-      child: child,
-    );
+    return Padding(padding: padding, child: child);
   }
 }
