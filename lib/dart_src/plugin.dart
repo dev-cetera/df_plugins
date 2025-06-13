@@ -12,7 +12,7 @@
 
 import 'dart:async';
 
-import 'package:df_type/df_type.dart';
+import 'package:df_safer_dart/df_safer_dart.dart';
 import 'package:meta/meta.dart';
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -42,11 +42,11 @@ abstract class PluginManager<TPlugin extends Plugin> {
 
   // Register a sequence of plugins to the manager.
   FutureOr<void> registerAll(Iterable<TPlugin> plugins) {
-    final sequential = Sequential();
+    final seq = SafeSequencer();
     for (final plugin in plugins) {
-      sequential.add((_) => register(plugin));
+      seq.add(() => register(plugin));
     }
-    return sequential.last;
+    return seq.last.value;
   }
 
   Function get build;

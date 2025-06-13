@@ -12,7 +12,8 @@
 
 import 'dart:async';
 
-import 'package:df_type/df_type.dart';
+import 'package:df_safer_dart/df_safer_dart.dart' show SafeSequencer;
+import 'package:df_type/df_type.dart' show consec;
 import 'package:meta/meta.dart';
 
 import 'plugin.dart';
@@ -38,11 +39,11 @@ class FunctionalPluginManager<T> extends PluginManager<FunctionalPlugin<T>> {
   @override
   FutureOr<T> Function() get build {
     return () {
-      final sequential = Sequential();
+      final seq = SafeSequencer();
       final previousOutputs = <T>[];
       for (final plugin in plugins) {
-        sequential.add(
-          (e) => consec(
+        seq.add(
+          () => consec(
             plugin.execute(previousOutputs),
             (e) => previousOutputs.add(e),
           ),
