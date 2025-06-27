@@ -28,7 +28,8 @@ abstract class FunctionalPlugin<T extends Object> extends Plugin {
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-class FunctionalPluginManager<T extends Object> extends PluginManager<FunctionalPlugin<T>> {
+class FunctionalPluginManager<T extends Object>
+    extends PluginManager<FunctionalPlugin<T>> {
   FunctionalPluginManager({super.plugins});
 
   /// Execute all registered plugins, passing the result of all previous ones
