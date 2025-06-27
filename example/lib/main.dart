@@ -57,11 +57,11 @@ final class ValuePlugin<T extends num> extends FunctionalPlugin<T> {
   const ValuePlugin(this.value);
 
   @override
-  T execute(List<T> previousOutputs) {
+  Sync<T> execute(List<T> previousOutputs) {
     if (previousOutputs.isNotEmpty) {
       throw Exception('ValuePlugin must be the first plugin in the list.');
     }
-    return value;
+    return Sync.okValue(value);
   }
 }
 
@@ -70,8 +70,8 @@ final class AddPlugin<T extends num> extends FunctionalPlugin<T> {
   const AddPlugin(this.value);
 
   @override
-  T execute(List<T> previousOutputs) {
-    return previousOutputs.last + value as T;
+  Sync<T> execute(List<T> previousOutputs) {
+    return Sync(() => previousOutputs.last + value as T);
   }
 }
 
@@ -80,8 +80,8 @@ final class MultiplyPlugin<T extends num> extends FunctionalPlugin<T> {
   const MultiplyPlugin(this.value);
 
   @override
-  T execute(List<T> previousOutputs) {
-    return previousOutputs.last * value as T;
+  Sync<T> execute(List<T> previousOutputs) {
+    return Sync(() => previousOutputs.last * value as T);
   }
 }
 
@@ -90,8 +90,8 @@ final class SubtractPlugin<T extends num> extends FunctionalPlugin<T> {
   const SubtractPlugin(this.value);
 
   @override
-  T execute(List<T> previousOutputs) {
-    return previousOutputs.last - value as T;
+  Sync<T> execute(List<T> previousOutputs) {
+    return Sync(() => previousOutputs.last - value as T);
   }
 }
 

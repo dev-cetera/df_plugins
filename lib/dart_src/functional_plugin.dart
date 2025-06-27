@@ -10,10 +10,7 @@
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
 
-import 'dart:async';
-
-import 'package:df_safer_dart/df_safer_dart.dart' show SafeSequencer;
-import 'package:df_type/df_type.dart' show consec;
+import 'package:df_safer_dart/df_safer_dart.dart';
 import 'package:meta/meta.dart';
 
 import 'plugin.dart';
@@ -21,35 +18,35 @@ import 'plugin.dart';
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
 @immutable
-abstract class FunctionalPlugin<T> extends Plugin {
+abstract class FunctionalPlugin<T extends Object> extends Plugin {
   const FunctionalPlugin();
 
   /// Execute the plugin with a list of previous outputs.
   @protected
-  FutureOr<T> execute(List<T> previousOutputs);
+  Resolvable<T> execute(List<T> previousOutputs);
 }
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-class FunctionalPluginManager<T> extends PluginManager<FunctionalPlugin<T>> {
+class FunctionalPluginManager<T extends Object> extends PluginManager<FunctionalPlugin<T>> {
   FunctionalPluginManager({super.plugins});
 
   /// Execute all registered plugins, passing the result of all previous ones
   /// as input.
   @override
-  FutureOr<T> Function() get build {
+  Resolvable<T> Function() get build {
     return () {
-      final seq = SafeSequencer();
+      final seq = TaskSequencer();
       final previousOutputs = <T>[];
       for (final plugin in plugins) {
-        seq.add(
-          () => consec(
-            plugin.execute(previousOutputs),
-            (e) => previousOutputs.add(e),
-          ),
+        seq.then(
+          (_) => plugin.execute(previousOutputs).then((e) {
+            previousOutputs.add(e);
+            return Some(e);
+          }),
         );
       }
-      return previousOutputs.last;
+      return seq.completion.then((e) => previousOutputs.last);
     };
   }
 }

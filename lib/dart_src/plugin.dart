@@ -10,8 +10,6 @@
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //.title~
 
-import 'dart:async';
-
 import 'package:df_safer_dart/df_safer_dart.dart';
 import 'package:meta/meta.dart';
 
@@ -21,7 +19,7 @@ import 'package:meta/meta.dart';
 abstract class Plugin {
   const Plugin();
   @visibleForOverriding
-  FutureOr<void> initialize() {}
+  Resolvable<Unit> initialize() => syncUnit();
 }
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
@@ -32,21 +30,21 @@ abstract class PluginManager<TPlugin extends Plugin> {
   }
 
   @protected
-  final List<TPlugin> plugins = [];
+  final plugins = <TPlugin>[];
 
   /// Register a plugin to the manager.
-  FutureOr<void> register(TPlugin plugin) {
+  Resolvable<Unit> register(TPlugin plugin) {
     plugins.add(plugin);
     return plugin.initialize();
   }
 
   // Register a sequence of plugins to the manager.
-  FutureOr<void> registerAll(Iterable<TPlugin> plugins) {
-    final seq = SafeSequencer();
+  Resolvable<Unit> registerAll(Iterable<TPlugin> plugins) {
+    final seq = TaskSequencer();
     for (final plugin in plugins) {
-      seq.add(() => register(plugin));
+      seq.then((_) => register(plugin).then((e) => Some(e)));
     }
-    return seq.last.value;
+    return seq.completion.toUnit();
   }
 
   Function get build;

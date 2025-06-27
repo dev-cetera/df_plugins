@@ -16,3 +16,5 @@ library;
 export 'dart:async';
 
 export 'dart_src/_index.g.dart';
+
+export 'package:df_safer_dart/df_safer_dart.dart';
