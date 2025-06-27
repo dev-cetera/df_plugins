@@ -15,6 +15,8 @@ import 'package:df_plugins/df_plugins.dart'; // for Flutter projects
 // ignore_for_file: unnecessary_import
 import 'package:df_plugins/df_plugins_dart.dart'; // for Dart-only projects
 
+import 'package:df_safer_dart/df_safer_dart.dart';
+
 import 'package:flutter/material.dart';
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
