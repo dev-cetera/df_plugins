@@ -16,7 +16,7 @@ repository: https://github.com/robmllze/df_plugins
 funding:
   - https://www.buymeacoffee.com/dev_cetera
 description: Provides methods to create plugins for Dart and Flutter. This package demonstrates ways to make Dart and Flutter even more modular.
-version: 0.2.0
+version: 0.2.1
 topics:
   - addon
   - modular
@@ -35,7 +35,7 @@ dependencies:
   flutter:
     sdk: flutter
   df_type: ^0.14.2
-  df_safer_dart: ^0.16.2
+  df_safer_dart: ^0.16.3
   meta: ^1.16.0
 
 ## -----------------------------------------------------------------------------

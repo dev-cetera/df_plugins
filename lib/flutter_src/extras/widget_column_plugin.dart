@@ -50,8 +50,7 @@ class WidgetColumnPluginManager
         crossAxisAlignment: crossAxisAlignment,
         mainAxisAlignment: mainAxisAlignment,
         mainAxisSize: mainAxisSize,
-        // TODO: Not yet supported by Flutter stable.
-        //spacing: spacing,
+        spacing: spacing,
         textDirection: textDirection,
         verticalDirection: verticalDirection,
         children: children,
