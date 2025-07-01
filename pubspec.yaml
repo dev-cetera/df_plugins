@@ -14,9 +14,11 @@ name: df_plugins
 homepage: https://dev-cetera.com/
 repository: https://github.com/robmllze/df_plugins
 funding:
-  - https://www.buymeacoffee.com/dev_cetera
+- https://www.buymeacoffee.com/dev_cetera
+- https://www.patreon.com/c/RobertMollentze
+- https://github.com/sponsors/robmllze
 description: Provides methods to create plugins for Dart and Flutter. This package demonstrates ways to make Dart and Flutter even more modular.
-version: 0.2.1
+version: 0.2.2
 topics:
   - addon
   - modular
@@ -34,14 +36,16 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  df_type: ^0.14.2
-  df_safer_dart: ^0.16.3
+
   meta: ^1.16.0
+
+  df_type: ^0.14.2
+  df_safer_dart: ^0.17.0
 
 ## -----------------------------------------------------------------------------
 
 dev_dependencies:
   flutter_lints: ^6.0.0
   custom_lint: ^0.7.5
-  df_safer_dart_lints: ^0.3.2
+  df_safer_dart_lints: ^0.3.3
 
