@@ -1,9 +1,10 @@
 //.title
 // ▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓▓
 //
-// Dart/Flutter (DF) Packages by dev-cetera.com & contributors. The use of this
-// source code is governed by an MIT-style license described in the LICENSE
-// file located in this project's root directory.
+// Copyright © dev-cetera.com & contributors.
+//
+// The use of this source code is governed by an MIT-style license described in
+// the LICENSE file located in this project's root directory.
 //
 // See: https://opensource.org/license/mit
 //
@@ -16,8 +17,7 @@ import '/df_plugins.dart';
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-class WidgetWrapPluginManager
-    extends WidgetPluginManager<Widget, AttachableWidgetPlugin> {
+class WidgetWrapPluginManager extends WidgetPluginManager<Widget, AttachableWidgetPlugin> {
   final Key? key;
   final AlignmentGeometry alignment;
   final Axis direction;
@@ -46,8 +46,7 @@ class WidgetWrapPluginManager
   });
 
   @override
-  Widget Function({required BuildContext context, required Widget child})
-  get build {
+  Widget Function({required BuildContext context, required Widget child}) get build {
     return ({required BuildContext context, required Widget child}) {
       final children = [child];
       for (final plugin in plugins) {
@@ -70,8 +69,7 @@ class WidgetWrapPluginManager
   }
 }
 
-class WidgetWrapPluginBuilder
-    extends WidgetPluginBuilder<Widget, AttachableWidgetPlugin> {
+class WidgetWrapPluginBuilder extends WidgetPluginBuilder<Widget, AttachableWidgetPlugin> {
   final AlignmentGeometry alignment;
   final Axis direction;
   final WrapAlignment runAlignment;
