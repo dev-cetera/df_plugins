@@ -17,7 +17,8 @@ import '/df_plugins.dart';
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-class WidgetWrapPluginManager extends WidgetPluginManager<Widget, AttachableWidgetPlugin> {
+class WidgetWrapPluginManager
+    extends WidgetPluginManager<Widget, AttachableWidgetPlugin> {
   final Key? key;
   final AlignmentGeometry alignment;
   final Axis direction;
@@ -46,7 +47,8 @@ class WidgetWrapPluginManager extends WidgetPluginManager<Widget, AttachableWidg
   });
 
   @override
-  Widget Function({required BuildContext context, required Widget child}) get build {
+  Widget Function({required BuildContext context, required Widget child})
+      get build {
     return ({required BuildContext context, required Widget child}) {
       final children = [child];
       for (final plugin in plugins) {
@@ -69,7 +71,8 @@ class WidgetWrapPluginManager extends WidgetPluginManager<Widget, AttachableWidg
   }
 }
 
-class WidgetWrapPluginBuilder extends WidgetPluginBuilder<Widget, AttachableWidgetPlugin> {
+class WidgetWrapPluginBuilder
+    extends WidgetPluginBuilder<Widget, AttachableWidgetPlugin> {
   final AlignmentGeometry alignment;
   final Axis direction;
   final WrapAlignment runAlignment;

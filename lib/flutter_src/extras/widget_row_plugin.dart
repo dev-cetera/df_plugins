@@ -17,7 +17,8 @@ import '/df_plugins.dart';
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-class WidgetRowPluginManager extends WidgetPluginManager<Widget, AttachableWidgetPlugin> {
+class WidgetRowPluginManager
+    extends WidgetPluginManager<Widget, AttachableWidgetPlugin> {
   final Key? key;
   final CrossAxisAlignment crossAxisAlignment;
   final double spacing;
@@ -38,7 +39,8 @@ class WidgetRowPluginManager extends WidgetPluginManager<Widget, AttachableWidge
   });
 
   @override
-  Widget Function({required BuildContext context, required Widget child}) get build {
+  Widget Function({required BuildContext context, required Widget child})
+      get build {
     return ({required BuildContext context, required Widget child}) {
       final children = [child];
       for (final plugin in plugins) {
@@ -58,7 +60,8 @@ class WidgetRowPluginManager extends WidgetPluginManager<Widget, AttachableWidge
   }
 }
 
-class WidgetRowPluginBuilder extends WidgetPluginBuilder<Widget, AttachableWidgetPlugin> {
+class WidgetRowPluginBuilder
+    extends WidgetPluginBuilder<Widget, AttachableWidgetPlugin> {
   final MainAxisAlignment mainAxisAlignment;
   final MainAxisSize mainAxisSize;
   final CrossAxisAlignment crossAxisAlignment;

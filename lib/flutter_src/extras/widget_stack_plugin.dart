@@ -17,7 +17,8 @@ import '/df_plugins.dart';
 
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
-class WidgetStackPluginManager extends WidgetPluginManager<Widget, AttachableWidgetPlugin> {
+class WidgetStackPluginManager
+    extends WidgetPluginManager<Widget, AttachableWidgetPlugin> {
   final Key? key;
   final AlignmentGeometry alignment;
   final TextDirection? textDirection;
@@ -34,7 +35,8 @@ class WidgetStackPluginManager extends WidgetPluginManager<Widget, AttachableWid
   });
 
   @override
-  Widget Function({required BuildContext context, required Widget child}) get build {
+  Widget Function({required BuildContext context, required Widget child})
+      get build {
     return ({required BuildContext context, required Widget child}) {
       final children = [child];
       for (final plugin in plugins) {
@@ -52,7 +54,8 @@ class WidgetStackPluginManager extends WidgetPluginManager<Widget, AttachableWid
   }
 }
 
-class WidgetStackPluginBuilder extends WidgetPluginBuilder<Widget, AttachableWidgetPlugin> {
+class WidgetStackPluginBuilder
+    extends WidgetPluginBuilder<Widget, AttachableWidgetPlugin> {
   final AlignmentGeometry alignment;
   final TextDirection? textDirection;
   final StackFit fit;

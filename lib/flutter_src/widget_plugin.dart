@@ -48,7 +48,8 @@ abstract class WidgetPluginBuilder<W extends Widget, P extends WidgetPlugin<W>>
 // ░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░
 
 @immutable
-abstract class AttachableWidgetPlugin<W extends Widget> extends WidgetPlugin<W> {
+abstract class AttachableWidgetPlugin<W extends Widget>
+    extends WidgetPlugin<W> {
   const AttachableWidgetPlugin();
 
   W attach(BuildContext context, Widget child);
